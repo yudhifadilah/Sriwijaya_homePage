@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Page</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+  <!-- Aktifkan dark mode berbasis class -->
+  <script>
+    tailwind = { config: { darkMode: 'class' } }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      font-family: 'Roboto Mono', monospace;
+    }
+    /* Animasi fade in + slide */
+    .reveal {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.8s ease-out;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-800 dark:bg-gray-900">
+
+  <!-- Navbar -->
+  <nav class="bg-black/30 dark:bg-gray-800/30 backdrop-blur-md shadow fixed top-0 left-0 w-full z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      
+      <!-- Logo + Nama -->
+      <div class="flex items-center space-x-3">
+        <!-- ✅ path diubah -->
+        <img src="images/logo.png" alt="Logo" class="h-10 w-10 object-contain"> 
+        <span class="text-xl font-bold text-white">Sriwijaya Cipta Kreasindo</span>
+      </div>
+
+      <!-- Menu Desktop -->
+      <div class="space-x-6 hidden md:flex items-center">
+        <a href="#home" class="text-white hover:text-blue-600 font-medium">Home</a>
+        <a href="#about" class="text-white hover:text-blue-600 font-medium">About</a>
+        <a href="#coverage" class="text-white hover:text-blue-600 font-medium">Coverage</a>
+        <a href="#portfolio" class="text-white hover:text-blue-600 font-medium">Portfolio</a>
+        <a href="#contact" class="text-white hover:text-blue-600 font-medium">Contact</a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="menuToggle" class="md:hidden p-2 rounded border border-gray-400 dark:border-gray-600">
+        ☰
+      </button>
+    </div>
+
+    <!-- Menu Mobile -->
+    <div id="mobileMenu" class="hidden flex-col space-y-4 px-6 py-6 bg-white/95 dark:bg-gray-800/95 md:hidden">
+      <a href="#home" class="block text-white hover:text-blue-600">Home</a>
+      <a href="#about" class="block text-white hover:text-blue-600">About</a>
+      <a href="#coverage" class="block text-white hover:text-blue-600">Coverage</a>
+      <a href="#portfolio" class="block text-white hover:text-blue-600">Portfolio</a>
+      <a href="#contact" class="block text-white hover:text-blue-600">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <main>
+
+    <!-- Home Section -->
+    <!-- ✅ path diubah -->
+    <section id="home" class="relative min-h-screen bg-[url('images/background.jpg')] bg-cover bg-center bg-no-repeat reveal">
+      <div class="absolute inset-0 bg-black/10 backdrop-blur-md flex items-center justify-center">
+        <div class="text-center px-6 text-white">
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">Sriwijaya Cipta Kreasindo</h1>
+          <p class="text-lg text-white/80">the perfect solution for your ads</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-100 dark:bg-gray-900 reveal">
+      <div class="max-w-4xl mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-6">About Us</h2>
+        <p class="leading-relaxed">
+          <b>PT Sriwijaya Cipta Kreasindo</b> was established in 2022...
+        </p>
+      </div>
+    </section>
+
+    <!-- Coverage -->
+    <!-- ✅ path diubah -->
+    <section id="coverage" class="relative bg-cover bg-center bg-no-repeat py-20 reveal" style="background-image: url('images/coverage-map.png');">
+      <div class="absolute inset-0 bg-teal-900/70"></div>
+      <div class="relative z-10 max-w-6xl mx-auto px-6 text-white">
+        <h2 class="text-4xl font-bold text-center mb-10">Coverage Area</h2>
+        <p class="text-center">Daftar wilayah cakupan ...</p>
+      </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio" class="py-20 bg-white dark:bg-gray-800 reveal">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-10 text-center">Portfolio</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          <div class="bg-gray-100 dark:bg-gray-700 p-6 rounded shadow">Project One</div>
+          <div class="bg-gray-100 dark:bg-gray-700 p-6 rounded shadow">Project Two</div>
+          <div class="bg-gray-100 dark:bg-gray-700 p-6 rounded shadow">Project Three</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <!-- ✅ path diubah -->
+    <section id="contact" class="relative py-20 bg-[url('images/contact-bg.jpg')] bg-cover bg-center bg-no-repeat">
+      <div class="absolute inset-0 bg-teal-900/80"></div>
+
+      <div class="relative z-10 max-w-4xl mx-auto px-6 text-white">
+        <h2 class="text-3xl font-bold mb-4">Get in Touch</h2>
+        <div class="w-20 h-0.5 bg-white mb-8"></div>
+
+        <!-- WhatsApp -->
+        <div class="flex items-start space-x-4 mb-6 text-left">
+          <svg class="w-8 h-8 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M16.7 13.1c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.7.1s-.8 1-.9 1.1c-.2.2-.3.2-.6.1-.3-.1-1.1-.4-2.1-1.3-.8-.7-1.3-1.6-1.4-1.9-.1-.3 0-.4.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.2 0-.4 0-.5s-.7-1.6-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.7.3s-1 1-1 2.5 1.1 2.9 1.3 3.1c.2.3 2.1 3.1 5 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.7.1.5-.1 1.7-.7 1.9-1.3.2-.6.2-1.1.2-1.3-.1-.1-.2-.1-.4-.2z"/>
+            <path d="M12 0C5.4 0 0 5.3 0 12c0 2.1.6 4.2 1.6 6L0 24l6.3-1.6c1.7 1 3.7 1.6 5.7 1.6 6.6 0 12-5.4 12-12S18.6 0 12 0zm0 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1L4 17.5l-.2-.4c-1-1.5-1.5-3.3-1.5-5.1 0-5.5 4.5-10 10-10s10 4.5 10 10-4.5 9.8-10 9.8z"/>
+          </svg>
+          <a href="https://wa.me/6285195857888" target="_blank" class="text-lg hover:underline">
+            +62 851-9585-7888 (Budi S Wijaya)
+          </a>
+        </div>
+
+        <!-- Address -->
+        <div class="flex items-start space-x-4 mb-6 text-left">
+          <svg class="w-8 h-8 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5c-1.4 0-2.5-1.1-2.5-2.5S10.6 6.5 12 6.5s2.5 1.1 2.5 2.5S13.4 11.5 12 11.5z"/>
+          </svg>
+          <a href="https://www.google.com/maps?q=Wisma+Intan+Wijaya+Jakarta" target="_blank" class="text-lg leading-relaxed hover:underline">
+            Wisma Intan Wijaya, 7th Floor Unit 8, <br>
+            Jl. Arjuna Selatan No.75, Kebon Jeruk, Jakarta Barat 11530
+          </a>
+        </div>
+
+        <!-- Google Maps Embed -->
+        <div class="mt-6">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.5529979306316!2d106.76234317499011!3d-6.190516293797083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f712f0af2597%3A0x247bc73cf776f72b!2sHive%20Five%20Cabang%20Kebon%20Jeruk!5e0!3m2!1sen!2sid!4v1757481779905!5m2!1sen!2sid" 
+            width="100%" 
+            height="350" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white dark:bg-gray-800 border-t mt-20 py-6 text-center text-sm text-gray-500 dark:text-gray-400">
+    &copy; 2025 Company Profile. PT Sriwijaya Cipta Kreasindo.
+  </footer>
+
+  <!-- Tombol WhatsApp Floating -->
+  <a href="https://wa.me/6285195857888" 
+     target="_blank" 
+     class="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 bg-green-500 rounded-full shadow-lg hover:scale-110 transition-transform duration-300">
+    <svg xmlns="http://www.w3.org/2000/svg" 
+         viewBox="0 0 24 24" 
+         fill="white" 
+         class="w-8 h-8">
+      <path d="M16.7 13.1c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.7.1s-.8 1-.9 1.1c-.2.2-.3.2-.6.1-.3-.1-1.1-.4-2.1-1.3-.8-.7-1.3-1.6-1.4-1.9-.1-.3 0-.4.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.2 0-.4 0-.5s-.7-1.6-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.7.3s-1 1-1 2.5 1.1 2.9 1.3 3.1c.2.3 2.1 3.1 5 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.7.1.5-.1 1.7-.7 1.9-1.3.2-.6.2-1.1.2-1.3-.1-.1-.2-.1-.4-.2z"/>
+      <path d="M12 0C5.4 0 0 5.3 0 12c0 2.1.6 4.2 1.6 6L0 24l6.3-1.6c1.7 1 3.7 1.6 5.7 1.6 6.6 0 12-5.4 12-12S18.6 0 12 0zm0 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1L4 17.5l-.2-.4c-1-1.5-1.5-3.3-1.5-5.1 0-5.5 4.5-10 10-10s10 4.5 10 10-4.5 9.8-10 9.8z"/>
+    </svg>
+  </a>
+
+  <!-- Script -->
+  <script>
+    // Animasi scroll section
+    function revealOnScroll() {
+      const reveals = document.querySelectorAll(".reveal");
+      const windowHeight = window.innerHeight;
+      reveals.forEach(el => {
+        const elementTop = el.getBoundingClientRect().top;
+        const elementBottom = el.getBoundingClientRect().bottom;
+        if (elementTop < windowHeight - 100 && elementBottom > 100) {
+          el.classList.add("active");
+        } else {
+          el.classList.remove("active");
+        }
+      });
+    }
+    window.addEventListener("scroll", revealOnScroll);
+    window.addEventListener("load", revealOnScroll);
+
+    // Toggle mobile menu
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+    menuToggle.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+  </script>
+</body>
+</html>
